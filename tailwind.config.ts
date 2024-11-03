@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        roboto: ['"Roboto"', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif'],
         bebas: ['Bebas Neue', 'sans-serif'],
         inter: ['Inter', 'sans-serif'],
         abeezee: ['ABeeZee', 'sans-serif'],

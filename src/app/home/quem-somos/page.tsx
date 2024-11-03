@@ -17,14 +17,14 @@ export default function QuemSomos() {
 					<p className=''>Nome: João Victor Michaeli</p>
 					<p className=''>Rm: 555678</p>
 					<p>Turma: 1TDSPK</p>
-					<p>GitHub: <a href="https://github.com/JoaoMichaeli">JoaoMichaeli</a></p>
+					<p>GitHub: <a className='underline hover:text-blue_1' href="https://github.com/JoaoMichaeli">JoaoMichaeli</a></p>
 				</div>
 				<div className=''>
 					<Image className='mb-10' src={saes} alt='Imagem do Vinícius Saes'/>
 					<p className=''>Nome: Vinícius Saes de Souza</p>
 					<p>Rm: 554456</p>
 					<p>Turma: 1TDSPK</p>
-					<p>GitHub: <a href="https://github.com/ViniciuSaeSouza">ViniciuSaeSouza</a></p>
+					<p>GitHub: <a className='underline hover:text-blue_1' href="https://github.com/ViniciuSaeSouza">ViniciuSaeSouza</a></p>
 				</div>
 			</div>
 		

@@ -29,13 +29,13 @@ export default function Footer() {
 		</div>
 		<div className='flex items-center space-x-6 me-24'>
 			
-			<a href="#" onClick={abreLinks} target='_blank'>
+			<a href="https://github.com/ViniciuSaeSouza/geek-vengers" onClick={abreLinks} target='_blank'>
 				<Image src={github} alt="Ícone do Github"/>
 			</a>
 			<a href="" target='_blank'>
 				<Image src={linkedIn} alt="Ícone do LinkedIn"/>
 			</a>
-			<a href="" target='_blank'>
+			<a href="https://www.figma.com/design/pznipVE6pPxblE4Cfz9DmM/Sprint-4?node-id=0-1&t=fWElpruZEVM5cf0P-1" target='_blank'>
 				<Image src={figma} alt="Ícone do Figma"/>
 			</a>
 		</div>
