@@ -23,6 +23,7 @@ export default function Recuperar() {
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+		
         const cabecalho = {
             method: "PUT",
         };
