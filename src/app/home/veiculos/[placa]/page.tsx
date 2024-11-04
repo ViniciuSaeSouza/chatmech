@@ -6,11 +6,19 @@ import { useRouter } from 'next/navigation';
 import { useState, useEffect, use } from "react";
 import Image from "next/image"
 
-export default function EditarVeiculo({params}:{params:{placa:string}}){
-	const navigate = useRouter();
-	const {placa} = params;
 
-    const [veiculo, setVeiculo] = useState<VeiculoType>({
+interface EditarVeiculoProps {
+    params: {
+        placa: string;
+    };
+}
+
+export default function EditarVeiculo({params}:EditarVeiculoProps){
+	const navigate = useRouter();
+	
+	const {placa} = params;
+    
+	const [veiculo, setVeiculo] = useState<VeiculoType>({
         fabricante: '',
         modelo: '',
         quilometragem: 0,
@@ -29,7 +37,7 @@ export default function EditarVeiculo({params}:{params:{placa:string}}){
         }
         chamadaApi()
 		console.log(veiculo)
-    }, [])
+    }, [placa])
 
     //Função para armazenar os dados digitados pelo usuário no obj veiculo
     const handleChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
