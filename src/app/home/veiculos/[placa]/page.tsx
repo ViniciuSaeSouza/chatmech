@@ -29,7 +29,7 @@ export default function EditarVeiculo({params}:{params:{placa:string}}){
         }
         chamadaApi()
 		console.log(veiculo)
-    }, [placa])
+    }, [])
 
     //Função para armazenar os dados digitados pelo usuário no obj veiculo
     const handleChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
