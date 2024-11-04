@@ -4,7 +4,7 @@ import Image from 'next/image'
 import React from 'react'
 import dodock from "@/images/dodock.png"
 import saes from "@/images/saes.png"
-import {Roboto, Inter} from 'next/font/google'
+
 
 export default function QuemSomos() {
   return (

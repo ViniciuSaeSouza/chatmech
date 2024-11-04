@@ -6,13 +6,12 @@ import React from 'react'
 type BannerHomeTypes = {
 	imgSrc: StaticImageData;
 	alt: string;
-	estilo: string;
 	tituloCard: string;
 	textoCard: string;
 	rota: string;
 }
 
-export default function BannerHome({imgSrc, alt, estilo, tituloCard, textoCard, rota}:BannerHomeTypes) {
+export default function BannerHome({imgSrc, alt, tituloCard, textoCard, rota}:BannerHomeTypes) {
   return (
 	<section className={`bg-blue_2 flex justify-center font-roboto py-12`}>
 		<div className='flex'>

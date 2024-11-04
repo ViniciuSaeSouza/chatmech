@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+
 
 import "./globals.css";
-import Cabecalho from "@/components/Cabecalho/Cabecalho";
-import Footer from "@/components/Footer/Footer";
+
 import { AuthProvider } from "@/context";
 
 export const metadata: Metadata = {

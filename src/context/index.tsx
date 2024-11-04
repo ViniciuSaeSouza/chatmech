@@ -1,5 +1,5 @@
 "use client"
-import { ClienteType, LoginType } from "@/types/type";
+import { ClienteType } from "@/types/type";
 import { createContext, useContext, useState } from "react";
 
 type AuthContextProps = {

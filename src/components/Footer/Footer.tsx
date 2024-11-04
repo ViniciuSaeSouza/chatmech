@@ -1,6 +1,6 @@
 "use client"
 import Image from 'next/image'
-import React, { DOMAttributes, MouseEventHandler } from 'react'
+import React from 'react'
 import Link from 'next/link'
 
 import telefone from '@/images/icon-tel.png'

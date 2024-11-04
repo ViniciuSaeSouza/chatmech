@@ -1,13 +1,12 @@
 import { VeiculoType } from '@/types/type'
 import Image from 'next/image'
 import React, { useState } from 'react'
-import { FaEdit } from "react-icons/fa";
-import { RiDeleteBin2Line } from "react-icons/ri";
+
 import Link from "next/link"
 import { FaTrash } from "react-icons/fa";
 import { MdModeEditOutline } from "react-icons/md"
 import { useRouter } from "next/navigation";
-import Veiculos from '@/app/home/veiculos/page';
+
 import Modal from '../Modal/Modal';
 
 

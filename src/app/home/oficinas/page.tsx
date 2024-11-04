@@ -26,8 +26,8 @@ export default function Oficinas() {
 			<h1 className='titulo_login'>Oficinas</h1>
 			<div className='flex flex-wrap max-w-3xl items-center justify-start gap-x-10 gap-y-4'>
 				{oficinas.map((o) =>
-					<div className='max-w-[200px]'>
-						<Image key={o.idMecanica} src={o.imagem} width={200} height={200} alt='Logo mecânica'/>
+					<div key={o.idMecanica} className='max-w-[200px]'>
+						<Image  src={o.imagem} width={200} height={200} alt='Logo mecânica'/>
 						<p className='font-inter text-xl font-semibold'>{o.nome}</p>
 						<p className=''>{o.descricao}</p>
 					</div>

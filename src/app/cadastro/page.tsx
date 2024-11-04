@@ -2,7 +2,7 @@
 import Cabecalho from "@/components/Cabecalho/Cabecalho";
 import Footer from "@/components/Footer/Footer";
 import { ClienteType } from "@/types/type";
-import { headers } from "next/headers";
+
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";

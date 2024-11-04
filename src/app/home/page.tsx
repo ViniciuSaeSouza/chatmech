@@ -1,6 +1,5 @@
 "use client"
 import React from "react";
-import { useAuth } from "@/context";
 import CabecalhoLogin from "@/components/CabecalhoLogin/CabecalhoLogin";
 import Footer from "@/components/Footer/Footer";
 import BannerHome from "@/components/BannerHome/BannerHome";
@@ -11,7 +10,7 @@ import logo_lg from '@/images/logo_chatmech_lg.png'
 
 export default function Home() {
 
-	const {user, login, logout} = useAuth()
+	
 
     const banner1_info = {
         imgSrc: banner_img1,
@@ -37,7 +36,7 @@ export default function Home() {
             <BannerHome
                 imgSrc={banner1_info.imgSrc}
                 alt={banner1_info.alt}
-				estilo={banner1_info.estilo}
+				
 				tituloCard={banner1_info.tituloCard}
 				textoCard={banner1_info.textoCard}
 				rota={banner1_info.rota}
@@ -52,7 +51,7 @@ export default function Home() {
 					<Image src={logo_lg} alt="Logo do chatmech"/>
 				</div>
 			</section>
-			<BannerHome imgSrc={banner2_info.imgSrc} alt={banner2_info.alt} estilo="" tituloCard={banner2_info.tituloCard} textoCard={banner2_info.textoCard} rota={banner2_info.rota}/>
+			<BannerHome imgSrc={banner2_info.imgSrc} alt={banner2_info.alt}  tituloCard={banner2_info.tituloCard} textoCard={banner2_info.textoCard} rota={banner2_info.rota}/>
 			<div className="mb-20"></div>
             <Footer />
         </>

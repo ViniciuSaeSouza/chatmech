@@ -2,30 +2,23 @@
 import Link from "next/link";
 
 import "../globals.css";
-import { ClienteType, LoginType} from "@/types/type";
+import { LoginType} from "@/types/type";
 import { useRouter } from "next/navigation";
 import Cabecalho from "@/components/Cabecalho/Cabecalho";
 import Footer from "@/components/Footer/Footer";
-import { useAuth } from "@/context";
+
 import { useState } from "react";
 
 export default function Login() {
     const navigate = useRouter();
 
-    const {user, login, logout} = useAuth()
+    
 
     const [dados, setDados] = useState<LoginType>({
         email: "",
         senha: "",
     });
 
-    const [cliente, setCliente] = useState<ClienteType>({
-        idCadastro: 0,
-        nome: "",
-        email: "",
-        senha: "",
-        cep: "",
-    });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -45,11 +38,8 @@ export default function Login() {
 				const usuario = await response.json();
                 // AQUELA TRETA GOSTOSA QUE VIMOS NA AULA ONLINE
                 const teste = usuario
-                setCliente(teste);
-                login(teste);
-                console.log(usuario)
-                console.log(user)
-                console.log(teste)
+                setDados(teste);
+                
                 // ---------------------------------------------
                 navigate.push(`/home`);
             } else if (response.status == 400 || response.status == 404) {
@@ -74,7 +64,7 @@ export default function Login() {
 		<Cabecalho/>
         <div className="max-w-xl mx-auto">
             <h1 className="font-inter text-5xl mt-6 mb-8 text-center">
-                {user?.email == "" ? "Login" : user?.email}
+                Login
             </h1>
             <form
                 className="border-2 px-8 py-10 rounded-md mb-14 flex flex-col gap-10"
