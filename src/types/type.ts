@@ -9,6 +9,9 @@ export type ClienteType = {
 }
 
 export type LoginType = {
+	cep: string,
+	idCadastro: number,
+	nome: string,
 	email: string,
-	senha: string
+	senha: string,
 }

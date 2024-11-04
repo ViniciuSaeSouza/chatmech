@@ -1,21 +1,25 @@
 "use client";
 import Link from "next/link";
-import React, { FormEvent, useState } from "react";
+
 import "../globals.css";
-import { ClienteType, LoginType } from "@/types/type";
+import { ClienteType} from "@/types/type";
 import { useRouter } from "next/navigation";
 import Cabecalho from "@/components/Cabecalho/Cabecalho";
 import Footer from "@/components/Footer/Footer";
+import { useAuth } from "@/context";
+import { useState } from "react";
 
 export default function Login() {
     const navigate = useRouter();
 
-    const [login, setLogin] = useState<LoginType>({
-        email: "vazio@vazio.com",
+    const {user, login, logout} = useAuth()
+
+    const [dados, setDados] = useState({
+        email: "",
         senha: "",
     });
 
-    const [cliente, setCliente] = useState<ClienteType>({
+    const [cliente, setCliente] = useState({
         idCadastro: 0,
         nome: "",
         email: "",
@@ -25,23 +29,26 @@ export default function Login() {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
-        setLogin({
-            ...login,
+        setDados({
+            ...dados,
             [name]: value,
         });
     };
 
-    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
             const response = await fetch(
-                `http://localhost:8080/cadastro/login/${login.email}/${login.senha}`
+                `http://localhost:8080/cadastro/login/${dados.email}/${dados.senha}`
             );
             if (response.ok) {
-				const user = await response.json();
-                setCliente(user);
-                console.log(user);
-                console.log(cliente);
+				const usuario = await response.json();
+                const teste = usuario
+                setCliente({...cliente, idCadastro: usuario.idCadastro});
+                login(usuario);
+                console.log(usuario)
+                console.log(cliente)
+                console.log(teste)
                 navigate.push(`/home`);
             } else if (response.status == 400 || response.status == 404) {
                 alert("Email ou Senha Inválidos!");
@@ -65,7 +72,7 @@ export default function Login() {
 		<Cabecalho/>
         <div className="max-w-xl mx-auto">
             <h1 className="font-inter text-5xl mt-6 mb-8 text-center">
-                Acessar Conta
+                {user?.email == "" ? "Login" : user?.email}
             </h1>
             <form
                 className="border-2 px-8 py-10 rounded-md mb-14 flex flex-col gap-10"

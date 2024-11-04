@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import { useAuth } from "@/context";
 import CabecalhoLogin from "@/components/CabecalhoLogin/CabecalhoLogin";
@@ -9,6 +10,9 @@ import Image from "next/image";
 import logo_lg from '@/images/logo_chatmech_lg.png'
 
 export default function Home() {
+
+	const {user, login, logout} = useAuth()
+
     const banner1_info = {
         imgSrc: banner_img1,
         alt: "Imagem de dois carros pratas",
@@ -27,7 +31,7 @@ export default function Home() {
     return (
         <>
             <CabecalhoLogin />
-            <h1 className="titulo_login">Área do cliente</h1>
+            <h1 className="titulo_login">{user?.email == ''?  "Área do cliente" : user?.email}</h1>
             <BannerHome
                 imgSrc={banner1_info.imgSrc}
                 alt={banner1_info.alt}

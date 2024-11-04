@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Cabecalho from "@/components/Cabecalho/Cabecalho";
 import Footer from "@/components/Footer/Footer";
+import { AuthProvider } from "@/context";
 
 export const metadata: Metadata = {
   title: "ChatMech 2024",
@@ -18,9 +19,9 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body>
-       
-        {children}
-       
+       <AuthProvider>
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );
