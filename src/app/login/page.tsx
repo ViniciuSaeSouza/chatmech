@@ -2,7 +2,7 @@
 import Link from "next/link";
 
 import "../globals.css";
-import { ClienteType} from "@/types/type";
+import { ClienteType, LoginType} from "@/types/type";
 import { useRouter } from "next/navigation";
 import Cabecalho from "@/components/Cabecalho/Cabecalho";
 import Footer from "@/components/Footer/Footer";
@@ -14,12 +14,12 @@ export default function Login() {
 
     const {user, login, logout} = useAuth()
 
-    const [dados, setDados] = useState({
+    const [dados, setDados] = useState<LoginType>({
         email: "",
         senha: "",
     });
 
-    const [cliente, setCliente] = useState({
+    const [cliente, setCliente] = useState<ClienteType>({
         idCadastro: 0,
         nome: "",
         email: "",
@@ -43,12 +43,14 @@ export default function Login() {
             );
             if (response.ok) {
 				const usuario = await response.json();
+                // AQUELA TRETA GOSTOSA QUE VIMOS NA AULA ONLINE
                 const teste = usuario
-                setCliente({...cliente, idCadastro: usuario.idCadastro});
-                login(usuario);
+                setCliente(teste);
+                login(teste);
                 console.log(usuario)
-                console.log(cliente)
+                console.log(user)
                 console.log(teste)
+                // ---------------------------------------------
                 navigate.push(`/home`);
             } else if (response.status == 400 || response.status == 404) {
                 alert("Email ou Senha Inválidos!");

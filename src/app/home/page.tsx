@@ -18,26 +18,29 @@ export default function Home() {
         alt: "Imagem de dois carros pratas",
 		estilo: '',
 		tituloCard: 'Veiculos',
-		textoCard: 'Acesse seus veículos cadastrados'
+		textoCard: 'Acesse seus veículos cadastrados',
+		rota : '/home/veiculos'
     };
 	const banner2_info = {
         imgSrc: banner_img2,
         alt: "Imagem de uma mecânica mexendo no motor de um carro",
 		estilo: '',
 		tituloCard: 'Oficinas',
-		textoCard: 'Veja as oficinas cadastradas'
+		textoCard: 'Veja as oficinas cadastradas',
+		rota : '/home/oficinas'
     };
 
     return (
         <>
             <CabecalhoLogin />
-            <h1 className="titulo_login">{user?.email == ''?  "Área do cliente" : user?.email}</h1>
+            <h1 className="titulo_login">Área do cliente</h1>
             <BannerHome
                 imgSrc={banner1_info.imgSrc}
                 alt={banner1_info.alt}
 				estilo={banner1_info.estilo}
 				tituloCard={banner1_info.tituloCard}
 				textoCard={banner1_info.textoCard}
+				rota={banner1_info.rota}
             />
 			<section className="flex justify-between items-center px-48 font-roboto lg:px-16">
 				<div>
@@ -49,7 +52,7 @@ export default function Home() {
 					<Image src={logo_lg} alt="Logo do chatmech"/>
 				</div>
 			</section>
-			<BannerHome imgSrc={banner2_info.imgSrc} alt={banner2_info.alt} estilo="" tituloCard={banner2_info.tituloCard} textoCard={banner2_info.textoCard}/>
+			<BannerHome imgSrc={banner2_info.imgSrc} alt={banner2_info.alt} estilo="" tituloCard={banner2_info.tituloCard} textoCard={banner2_info.textoCard} rota={banner2_info.rota}/>
 			<div className="mb-20"></div>
             <Footer />
         </>

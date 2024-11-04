@@ -9,16 +9,17 @@ type BannerHomeTypes = {
 	estilo: string;
 	tituloCard: string;
 	textoCard: string;
+	rota: string;
 }
 
-export default function BannerHome({imgSrc, alt, estilo, tituloCard, textoCard}:BannerHomeTypes) {
+export default function BannerHome({imgSrc, alt, estilo, tituloCard, textoCard, rota}:BannerHomeTypes) {
   return (
 	<section className={`bg-blue_2 flex justify-center font-roboto py-12`}>
 		<div className='flex'>
 			<div className='bg-white max-h-fit max-w-[380px] rounded py-8 px-6 z-20'>
 				<p className='text-blue_1 font-semibold text-xl mb-2'>{tituloCard}</p>
 				<p className='font-bold text-3xl mb-6'>{textoCard}</p>
-				<div className='text-center'><Link href={"/home"}><button className='button_submit relative max-w-[50%]'>Acessar</button></Link></div>
+				<div className='text-center'><Link href={rota}><button className='button_submit relative max-w-[50%]'>Acessar</button></Link></div>
 			</div>
 			<Image className='mt-8 z-10' src={imgSrc} alt={alt}/>
 		</div>

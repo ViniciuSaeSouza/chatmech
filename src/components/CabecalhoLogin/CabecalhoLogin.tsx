@@ -1,3 +1,4 @@
+
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -12,7 +13,8 @@ export default function CabecalhoLogin() {
 		</div>
 		<div className='me-24 text-lg flex space-x-10 items-center'>
 			<Link className='home_nav' href={'/home/quem-somos'}>Quem somos</Link>
-			<Link className='home_nav' href={'/home/veículos'}>Veículos</Link>
+			<Link className='home_nav' href={'/home/veiculos'}>Veículos</Link>
+			<Link className='home_nav' href={'/home/oficinas'}>Oficinas</Link>
 			<Link className='home_nav' href={'/home'}>Área do cliente</Link>
 		</div>
 	</header>

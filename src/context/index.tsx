@@ -3,8 +3,8 @@ import { ClienteType, LoginType } from "@/types/type";
 import { createContext, useContext, useState } from "react";
 
 type AuthContextProps = {
-    user: LoginType | null;
-    login: (user:LoginType)=>void;
+    user: ClienteType | null;
+    login: (user:ClienteType)=>void;
     logout: ()=>void;
 }
 
@@ -12,7 +12,7 @@ const AuthContext = createContext<AuthContextProps>({} as AuthContextProps)
 
 const AuthProvider = ({children}:{children:React.ReactNode})=>{
 
-    const [user, setUser] = useState<LoginType>({
+    const [user, setUser] = useState<ClienteType>({
         cep: "",
         idCadastro: 0,
         nome: '',
@@ -20,7 +20,7 @@ const AuthProvider = ({children}:{children:React.ReactNode})=>{
         senha: ''
     })
 
-    const login = (user: LoginType)=>{
+    const login = (user: ClienteType)=>{
         setUser(user)
     }
 

@@ -9,15 +9,6 @@ import linkedIn from '@/images/Linkedin.png'
 import figma from '@/images/Figma.png'
 
 export default function Footer() {
-	
-	const abreLinks = (e:any) => {
-		const urls = ['https://github.com/JoaoMichaeli','https://github.com/ViniciuSaeSouza']
-
-		urls.map((lnk => {
-			window.open(lnk, '_blank')
-		}))
-	}
-
   return (
 	<footer className='border-t-2 border-gray-400 sticky top-[100vh] p-3 flex justify-between'>
 		<div className='flex items-start space-x-4  ms-16'>
@@ -29,7 +20,7 @@ export default function Footer() {
 		</div>
 		<div className='flex items-center space-x-6 me-24'>
 			
-			<a href="https://github.com/ViniciuSaeSouza/geek-vengers" onClick={abreLinks} target='_blank'>
+			<a href="https://github.com/ViniciuSaeSouza/chatmech" target='_blank'>
 				<Image src={github} alt="Ícone do Github"/>
 			</a>
 			<a href="" target='_blank'>
